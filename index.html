@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分析詳細資訊 - ScamProtector | 詐騙護手</title>
+    <style>
+        body {
+            font-family: '微軟正黑體', sans-serif;
+            background-color: black;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        div.waiting {
+            text-align: center;
+        }
+
+        .lds-ellipsis {
+            display: inline-block;
+            position: relative;
+            width: 80px;
+            height: 40px;
+            margin-left: 85px;
+        }
+
+        .lds-ellipsis div {
+            position: absolute;
+            top: 10px;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: #ffffff85;
+            animation-timing-function: cubic-bezier(0, 1, 1, 0);
+        }
+
+        .lds-ellipsis div:nth-child(1) {
+            left: 8px;
+            animation: lds-ellipsis1 0.6s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(2) {
+            left: 8px;
+            animation: lds-ellipsis2 0.6s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(3) {
+            left: 32px;
+            animation: lds-ellipsis2 0.6s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(4) {
+            left: 56px;
+            animation: lds-ellipsis3 0.6s infinite;
+        }
+
+        @keyframes lds-ellipsis1 {
+            0% {
+                transform: scale(0);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes lds-ellipsis3 {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(0);
+            }
+        }
+
+        @keyframes lds-ellipsis2 {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(24px, 0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="waiting" id="waiting">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    
+    <div class="container text-center">
+        <div id="img"></div>
+        <h2 class="text-white font-weight-bold my-3" id="title"></h2>
+        <p class="text-white" id="message"></p>
+    </div>
+</body>
+<script>
+    const obj = [
+        {
+            id: 1692813504,
+            title: `為什麼要選擇幣安？超過 1.5 億用戶選擇我...`,
+            result: `幣安的廣告主張提到超過1.5億個用戶選擇他們，以及最佳安全性、最快交易速度和最低手續費等優勢。但請謹慎對待此類廣告主張，並審慎考慮以下幾點：
+1. 用戶數量可能是可疑的：雖然廣告提到超過1.5億個用戶，但我們無法確定這些用戶是如何被計算的，或者是否存在重複計算或虛假帳戶的可能性。
+2. 安全性要自行評估：儘管廣告宣稱最佳安全性，但我們應該自行進行研究和評估，以確定平台是否具有強大的安全措施和保護用戶資產的機制。
+3. 交易速度與手續費也需要比較：除了最快的交易速度和最低的手續費之外，我們應該比較不同平台之間的交易速度和手續費，並確保選擇的平台符合我們的需求。
+總之，幣安的廣告可能強調一些優點，但我們應該自己進行評估和研究，並與其他平台進行比較，以找到最適合自己的交易平台。`,
+            image: ''
+        },
+        {
+            id: 1692813637,
+            title: '立即體驗我們的虛擬貨幣APP！透過安全易用...',
+            result: `這段文字聽起來像是虛擬貨幣交易平台的廣告詞，但無法確定是否為詐騙手法。有一些可疑之處需要注意：首先，該訊息提到立即體驗虛擬貨幣APP，這可能意味著他們希望您盡快投資而不會給您足夠的時間做研究或評估風險。第二，承諾讓您在下載APP後立即獲得資金的回報，這可能太好以至於難以置信，需要謹慎對待。最後，他們提到新用戶入金50USDT即可獲得3000LINE POINT，這種類型的促銷活動往往被用於吸引更多人投資，而且可能涉及隱藏的條件或要求。
+總結起來，這個訊息有一些可疑之處，建議您保持警惕，不要隨意投入資金。在投資前，對於平台和交易品種進行更深入的研究，確保您理解所有相關風險，並謹慎保護您的個人資訊和財務安全。`,
+            image: ''
+        },
+        {
+            id: 1692902179,
+            title: '檢測圖片結果',
+            result: `該QR Code解析成功後，連結至YouTube頁面，影片名稱為"Rick Astley - Never Gonna Give You Up (Official Music Video)" 是一首在1987年由Rick Astley演唱的流行歌曲，也被廣泛稱為“Rickrolling”。這首歌的音樂錄影帶曾被用來進行一種互聯網笑話，稱為“Rickrolling”，在這種情況下，人們被引導點擊一個看似有吸引力的連結，但最終卻被導向這個音樂錄影帶。這個笑話旨在愉快地出其不意地將人們帶到一個出乎意料的內容，而不是進行詐騙活動。
+總的來說，這個音樂錄影帶本身並不涉及詐騙成分，而只是一個網絡文化的一部分，旨在帶來歡樂和娛樂。然而，如果有人將這個音樂錄影帶與詐騙活動聯繫起來，那就可能涉及詐騙成分，因為欺騙人們的信任是不道德的行為。但是通常情況下，人們使用這個音樂錄影帶來進行無害的玩笑，而不是詐騙活動。`,
+            image: 'https://i.imgur.com/HEn1cJQ.jpeg'
+        },
+        {
+            id: 1692902367,
+            title: '檢測圖片結果',
+            result: `危險!為您的安全著想，強烈建議您不要前往該網頁，該網址為政府開放資料-假投資詐騙網站之清單。這可能涉及詐騙或危險的情況，可能會危害您的個人資訊和財務安全。請遠離這種風險，保護自己免受損害。`,
+            image: 'https://i.imgur.com/53gqwXA.jpeg'
+        },
+        {
+            id: 1692902928,
+            title: '檢測圖片結果',
+            result: `圖片的安全度分析，結果顯示成人、欺詐、醫療、暴力和有害內容的可能性都非常低。根據Google Vision AI的分析報告，圖片可能是藝術、對稱、電力藍、圖案和太空相關的，可信度介於0.74到0.76之間。然而，文字部分沒有提供您提到的資訊，無法對此做出評論。總體而言，根據這些分析結果，沒有發現詐騙的手法或明顯可疑之處。請注意保持警覺，並繼續觀察與評估任何不尋常或可疑情況。`,
+            image: 'https://i.imgur.com/eYxkEUl.jpeg'
+        },
+        {
+            id: 1692903078,
+            title: '檢測語音結果',
+            result: `根据您提供的信息，我們無法確定該虛擬貨幣交易平台的可靠性和合法性。請注意，虛擬貨幣市場存在風險，可能涉及詐騙和非法活動。在進行任何投資前，請務必進行詳細調查和諮詢專業意見。我們建議您慎重考慮，不要隨意提供個人身份證明信息，以避免身份盜用和金融損失。如果有任何疑慮，建議與當地金融監管機構聯繫以獲取更多信息。【原文】精彩虛擬貨幣狂歡盛會立即加入我們的數字黃金交易平台想像一下您可以輕鬆跨越線上平台參與全球最熱門的虛擬貨幣交易獲取大獎的投資回報無論您是新手還是經驗豐富的交易者我們都為您服務準備好了極致的交易體驗並有24小時不休息的客服服務新用戶領域現在加入並提供身份證即可獲得價值1萬美元的交易紅利這是您投資之旅的完美起點`,
+            image: ''
+        },
+        
+    ]
+
+    function getQueryStringParameter(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+    }
+
+    async function initializeLiff() {
+        try {
+            await liff.init({ liffId: "2000446415-7b8vWrG4" }); // 替換為您的 LIFF ID
+            initialData()
+        } catch (error) {
+            displayMessage("LIFF initialization failed: " + error, "", "");
+        }
+    }
+
+    function initialData() {
+        const paramKey = "key";
+        const parameterValue = getQueryStringParameter(paramKey);
+        if (parameterValue) {
+            var keyIndex = 0;
+            for(let i = 0; i < obj.length; i++) {
+                if(obj[i]["id"] == parameterValue) keyIndex = i;
+            }
+            setTimeout(() => {
+                displayMessage(
+                    obj[keyIndex]["title"],
+                    obj[keyIndex]["result"],
+                    obj[keyIndex]["image"])
+            }, 1500);
+        }
+    }
+
+    function displayMessage(title, message, img) {
+        var intervalID = setInterval(() => {
+            document.getElementById("waiting").style.display = 'none';
+            document.getElementById("title").textContent = title;
+            document.getElementById("message").textContent = message;
+            if (img != "")
+                document.getElementById("img").innerHTML = `<img src="${img}">`;
+            if (document.getElementById("title").textContent == title)
+                clearInterval(intervalID);
+        }, 200);
+
+    }
+    
+    document.addEventListener("DOMContentLoaded", initialData);
+</script>
+
+</html>
